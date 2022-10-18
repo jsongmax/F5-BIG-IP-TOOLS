@@ -6,14 +6,22 @@
 
 
 ## 使用方法
+	-u url
+		you target, example: https://192.168.1.1
+	-c command to eval
+		you command to eval, example: id
+	-v the vul to use
+		options: cve-2022-1388 cve-2021-22986 cve-2020-5902
+	-m only use in cve-2020-5902
+		options: fileRead userList dirList
 
 ### poc
 
-<code> main -u http://127.0.0.1</code>
+<code> main -u http://127.0.0.1 -v cve-2022-1388</code>
 
 ### exp
 
-<code> main -u http://127.0.0.1 -c command</code>
+<code> main -u http://127.0.0.1 -v cve-2021-22986 -c command</code>
 
 ## 免责声明
 
