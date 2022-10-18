@@ -1,7 +1,7 @@
 package main
 
 import (
-	cve_2020_5902 "F5-BIG-IP-TOOLS/pkg/cve_2020-5902"
+	"F5-BIG-IP-TOOLS/pkg/cve_2020-5902"
 	"F5-BIG-IP-TOOLS/pkg/cve_2021_22986"
 	"F5-BIG-IP-TOOLS/pkg/cve_2022_1388"
 	"flag"
@@ -33,7 +33,7 @@ func usage() {
 }
 
 func bannerPrint() {
-	bannerTemplate := fmt.Sprintf(`{{ .Title "%s" "smisome1" 4}}`, "F5 Tools")
+	bannerTemplate := fmt.Sprintf(`{{ .Title "%s" "smisome1" 4}}`, "FF Tools")
 	banner.InitString(colorable.NewColorableStdout(), true, true, bannerTemplate)
 	fmt.Println("by    JsonGMax")
 }
